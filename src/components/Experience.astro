@@ -1,0 +1,51 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    title: "Cloud Computing",
+    company: "Experis ManpowerGroup SL ",
+    description:
+      "Desarrollo e implementación de pipelines serverless en AWS. Automatización con Python y Terraform, optimizando despliegues e integración de datos en tiempo real.",
+    // link: "https://google.com,
+  },
+  {
+    date: "2023-2024",
+    title: "Data Analyst",
+    company: "SDG Group – Banco Santander",
+    description:
+      "Análisis y modelado de datos en Snowflake y Power BI, aplicando consultas SQL avanzadas, ETL con Power Query y métricas DAX para crear dashboards interactivos y optimizar la toma de decisiones en RR. HH.",
+  },
+  {
+    date: "2022-2023",
+    title: "Data Engineering & Analytics",
+    company: "Collaborative Team",
+    description:
+      "Consolidación, limpieza y análisis exploratorio de datos de ventas con Python (pandas, NumPy, matplotlib).Creación de métricas, visualizaciones y detección de patrones para identificar tendencias comerciales clave.",
+  },
+  {
+    date: "2020-2021",
+    title: "Backend Developer",
+    company: "Creative",
+    description:
+      "Desarrollo de arquitectura full-stack (Node.js + React.js) bajo modelo MVC, con APIs RESTful y conexión mediante Axios.Implementación de autenticación JWT, gestión de archivos con Cloudinary y Multer, y colaboración en tiempo real con WebSockets.",
+  },
+  {
+    date: "2019",
+    title: "Front Developer",
+    company: "Dos Setenta Marketing y Desarrollo",
+    description:
+      "Maquetación y desarrollo web con HTML5, CSS3 y JavaScript, aplicando principios UX/UI. Mantenimiento de sitios WordPress y PrestaShop, configuración de plugins y pasarelas de pago seguras.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
