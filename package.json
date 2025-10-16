@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "description": "Portfolio personal de Luis Jaramillo, desarrollado con Astro y TailwindCSS.",
-  "homepage": "https://luiscode100.github.io/portfolio_luis/",
+  "homepage": "https://luiscode100.github.io/portfolio_luis",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
