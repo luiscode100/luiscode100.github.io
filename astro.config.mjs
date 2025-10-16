@@ -8,4 +8,5 @@ export default defineConfig({
   integrations: [tailwind(), robotsTxt()],
   site: 'https://luiscode100.github.io',
   // base: '/portfolio_luis/'
+  base: '/portfolio_luis'
 });
