@@ -8,6 +8,4 @@ const isProd = process.env.NODE_ENV === 'production'
 export default defineConfig({
   integrations: [tailwind(), robotsTxt()],
   site: 'https://luiscode100.github.io',
-  // En local usa '/', en GitHub usa '/portfolio_luis/'
- // base: isProd ? '/portfolio_luis/' : '/',
 })
