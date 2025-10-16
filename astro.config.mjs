@@ -1,11 +1,13 @@
 import { defineConfig } from 'astro/config'
-import tailwind from "@astrojs/tailwind"
+import tailwind from '@astrojs/tailwind'
+import robotsTxt from 'astro-robots-txt'
 
-import robotsTxt from "astro-robots-txt"
+// Detecta si estamos en producción (GitHub Pages) o en local
+const isProd = process.env.NODE_ENV === 'production'
 
-// https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), robotsTxt()],
   site: 'https://luiscode100.github.io',
-  base: 'portfolio_luis'
-});
+  // En local usa '/', en GitHub usa '/portfolio_luis/'
+ // base: isProd ? '/portfolio_luis/' : '/',
+})
