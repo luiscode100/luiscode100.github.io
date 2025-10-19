@@ -14,7 +14,7 @@ const { description, title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="es" class="dark"> <!-- fuerzo que se ejecute en modo dark siempre -->
+<html lang="es" >
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -22,8 +22,6 @@ const { description, title } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <!-- script temprano para garantizar dark antes de cargar css -->
-    <script>document.documentElement.classList.add('dark')</script>
     <ViewTransitions />
   </head>
 
