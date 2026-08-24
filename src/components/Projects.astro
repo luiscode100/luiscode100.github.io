@@ -1,115 +1,145 @@
 ---
 import GitHub from "./icons/GitHub.astro";
-import NextJS from "./icons/NextJS.astro";
-import Tailwind from "./icons/Tailwind.astro";
-import Python from "./icons/Python.astro";
-import Lambda from "./icons/Lambda.astro";
-import Sns from "./icons/Sns.astro";
-import Sqs from "./icons/Sqs.astro";
-import S3 from "./icons/S3.astro";
-import Terraform from "./icons/Terraform.astro";
-import ApiGateway from "./icons/ApiGateway.astro";
-import Dynamo from "./icons/Dynamo.astro";
-import Vpc from "./icons/Vpc.astro";
-import Rds from "./icons/Rds.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
-
 const TAGS = {
+  REACT: {
+    name: "React.js",
+    class: "bg-black text-white",
+  },
+  REACT_ROUTER: {
+    name: "React Router.js",
+    class: "bg-black text-white",
+  },
+  JAVASCRIPT: {
+    name: "Javascript.js",
+    class: "bg-black text-white",
+  },
+  VITE: {
+    name: "Vite.js",
+    class: "bg-black text-white",
+  },
+  EXPRESS: {
+    name: "Express.js",
+    class: "bg-black text-white",
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL.js",
+    class: "bg-black text-white",
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-black text-white",
+  },
   NEXT: {
     name: "Next.js",
     class: "bg-black text-white",
-    icon: NextJS,
   },
   TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+    name: "Tailwind",
+    class: "bg-black  text-white",
+  },
+  JWT: {
+    name: "JWT",
+    class: "bg-black text-white",
+  },
+  BCRYPT: {
+    name: "bcrypt",
+    class: "bg-black text-white",
+  },
+  HELMET: {
+    name: "Helmet",
+    class: "bg-black text-white",
+  },
+  CORS: {
+    name: "CORS",
+    class: "bg-black text-white",
+  },
+  SWAGGER: {
+    name: "Swagger",
+    class: "bg-black text-white",
   },
   PYTHON: {
     name: "Python",
     class: "bg-black text-white",
-    icon: Python,
   },
   LAMBDA: {
     name: "Lambda",
     class: "bg-black text-white",
-    icon: Lambda,
   },
   SQS: {
     name: "SQS",
     class: "bg-black text-white",
-    icon: Sqs,
   },
   SNS: {
     name: "SNS",
     class: "bg-black text-white",
-    icon: Sns,
   },
   S3: {
     name: "S3",
     class: "bg-black text-white",
-    icon: S3,
   },
   RDS: {
     name: "RDS",
     class: "bg-black text-white",
-    icon: Rds,
   },
   VPC: {
     name: "VPC",
     class: "bg-black text-white",
-    icon: Vpc,
   },
   DYNAMO: {
     name: "DynamoDB",
     class: "bg-black text-white",
-    icon: Dynamo,
   },
   API: {
     name: "API",
     class: "bg-black text-white",
-    icon: ApiGateway,
   },
-   TERRAFORM: {
+  TERRAFORM: {
     name: "Terraform",
     class: "bg-black text-white",
-    icon: Terraform,
   },
 };
-//esta comentado porque en este codigo comentado
-//  {
-//     title: "FaceDetect – API serverless para detección de rostros",
-//     description:
-//       "Aplicación en la nube que identifica rostros en imágenes enviadas por los usuarios. Al subir una imagen, el sistema analiza automáticamente las caras y guarda los resultados.Todo el proceso se ejecuta en AWS sin servidores, de forma rápida y eficiente.",
-//     link: "https://svgl.vercel.app/",
-//     github: "https://github.com/luiscode100/aws-face-detection",
-//     image: "/projects/svgl.webp",
-//     tags: [TAGS.NEXT, TAGS.TAILWIND],
-//   }
+
 const PROJECTS = [
+  {
+    title: "Tasklist – Aplicación web para gestión de tareas",
+    description:
+      "Desarrollo de una aplicación web para la gestión y organización de tareas, permitiendo a los usuarios crear, actualizar y administrar sus tareas desde una interfaz sencilla e intuitiva. El proyecto implementa autenticación de usuarios y una arquitectura frontend y backend separada y despliegue en producción.",
+    link: "https://tasklist-gamma-nine.vercel.app",
+    github: "https://github.com/luiscode100/tasklist",
+    image: "/projects/tasklist.webp",
+    tags: [
+      TAGS.VITE,
+      TAGS.TAILWIND,
+      TAGS.REACT,
+      TAGS.NODE,
+      TAGS.JWT,
+      TAGS.POSTGRESQL,
+    ],
+  },
   {
     title: "aws-claims-management – API serverless para gestión de siniestros",
     description:
-      "Desarrollo de una plataforma escalable para el procesamiento de siniestros mediante una arquitectura de microservicios. El sistema garantiza la persistencia y resiliencia de los datos mediante el desacoplamiento con colas SQS, automatizando el cálculo de costes y la generación de informes técnicos en PDF.",
+      "Desarrollo de una plataforma escalable para el procesamiento de siniestros mediante una arquitectura de microservicios. El sistema utiliza colas SQS para gestionar el procesamiento de los siniestros y automatiza el cálculo de costes y la generación de informes en PDF.",
     github: "https://github.com/luiscode100/aws-claims-management",
     image: "/projects/claims.webp",
-    tags: [TAGS.PYTHON,TAGS.VPC,TAGS.RDS,TAGS.LAMBDA,TAGS.SQS,TAGS.SNS],
+    tags: [TAGS.PYTHON, TAGS.VPC, TAGS.RDS, TAGS.LAMBDA, TAGS.SQS, TAGS.SNS],
   },
   {
     title: "FaceDetect – API serverless para detección de rostros",
     description:
-      "Aplicación en la nube que identifica rostros en imágenes enviadas por los usuarios. Al subir una imagen, el sistema analiza automáticamente las caras y guarda los resultados.Todo el proceso se ejecuta en AWS sin servidores, de forma rápida y eficiente.",
+      "Aplicación en la nube que identifica rostros en imágenes enviadas por los usuarios. Al subir una imagen, el sistema analiza las caras y guarda los resultados. Todo el proceso se ejecuta en AWS sin servidores.",
     github: "https://github.com/luiscode100/aws-face-detection",
     image: "/projects/detect_faces.webp",
-    tags: [TAGS.PYTHON,TAGS.LAMBDA,TAGS.DYNAMO,TAGS.S3,TAGS.API],
+    tags: [TAGS.PYTHON, TAGS.LAMBDA, TAGS.DYNAMO, TAGS.S3, TAGS.API],
   },
   {
     title:
       "AWS AutoScaling Web Cluster – Despliegue automatizado con Terraform",
     description:
-      "Infraestructura web en AWS desplegada automáticamente con Terraform. El sistema crea, configura y escala instancias EC2 según la carga mediante un balanceador de aplicación y autoescalado.",
+      "Infraestructura web en AWS desplegada con Terraform. El sistema crea, configura y escala instancias EC2 según la carga mediante un balanceador de aplicación y autoescalado.",
     github:
       "https://github.com/luiscode100/terraform-aws-autoscaling-web-cluster",
     image: "/projects/aws_autoscaling.webp",
@@ -158,7 +188,7 @@ const PROJECTS = [
                   <span
                     class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
                   >
-                    <tag.icon class="size-4" />
+                    {/* <tag.icon class="size-4" /> iconos*/}
                     {tag.name}
                   </span>
                 </li>

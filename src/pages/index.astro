@@ -5,11 +5,35 @@ import AboutMe from "@/components/AboutMe.astro"
 import Briefcase from "@/components/icons/Briefcase.astro"
 import CodeIcon from "@/components/icons/Code.astro"
 import Experience from "@/components/Experience.astro"
+import GitHubIcon from "@/components/icons/GitHub.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import MailIcon from "@/components/icons/Mail.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
+
+const contactLinks = [
+  {
+    label: "Correo",
+    href: "mailto:luisjp.work@gmail.com",
+    text: "luisjp.work@gmail.com",
+    icon: MailIcon,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/luiscode100",
+    text: "github.com/luiscode100",
+    icon: GitHubIcon,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/luisjp-work",
+    text: "linkedin.com/in/luisjp-work",
+    icon: LinkedInIcon,
+  },
+]
 ---
 
 <Layout
@@ -17,38 +41,63 @@ import TitleSection from "@/components/TitleSection.astro"
   description="Desarrollador e Ingeniero de Software con formación en Ingeniería Informática. Experiencia en AWS, Azure y Python. Enfocado en soluciones cloud, integración de datos y despliegues automatizados."
 >
   <main class="px-4">
-    <SectionContainer class="py-16 md:py-34">
+    <SectionContainer id="home" class="py-16 md:py-34">
       <Hero>
       </slot>
     </Hero>
     </SectionContainer>
-    <div class="space-y-24">   
+    <div class="space-y-24">
+      <SectionContainer id="sobre-mi">
+        <TitleSection>
+          <ProfileCheck class="size-8" />
+          Sobre mí
+        </TitleSection>
+        <AboutMe />
+      </SectionContainer>
 
-    <SectionContainer id="sobre-mi">
-      <TitleSection>
-        <ProfileCheck class="size-8" />
-        Sobre mí
-      </TitleSection>
-      <AboutMe />
-    </SectionContainer>
-    
-    <SectionContainer id="experiencia">
-      <TitleSection>
-        <Briefcase class="size-8" />
-        Experiencia Profesional
-      </TitleSection>
-      <Experience />
-    </SectionContainer>
+      <SectionContainer id="experiencia">
+        <TitleSection>
+          <Briefcase class="size-8" />
+          Experiencia Profesional
+        </TitleSection>
+        <Experience />
+      </SectionContainer>
 
-    <SectionContainer id="proyectos">
-      <TitleSection>
-        <CodeIcon class="size-7" />
-        Proyectos
-      </TitleSection>
-      <Projects />
-    </SectionContainer>
+      <SectionContainer id="proyectos">
+        <TitleSection>
+          <CodeIcon class="size-7" />
+          Proyectos
+        </TitleSection>
+        <Projects />
+      </SectionContainer>
 
-    
-  </div>
+      <SectionContainer id="contacto">
+        <TitleSection>
+          <MailIcon class="size-7" />
+          Contacto
+        </TitleSection>
+
+        <div class="grid gap-4 md:grid-cols-3">
+          {
+            contactLinks.map(({ label, href, text, icon: Icon }) => (
+              <a
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                class="flex items-center gap-3 rounded-2xl border border-gray-200 bg-white/50 p-4 text-gray-800 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-400 hover:shadow-md dark:border-gray-700 dark:bg-gray-900/40 dark:text-gray-200"
+              >
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-500">
+                  <Icon class="size-5" />
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">{label}</p>
+                  <p class="text-sm font-medium">{text}</p>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </SectionContainer>
+    </div>
   </main>
 </Layout>
