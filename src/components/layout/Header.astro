@@ -99,7 +99,7 @@ const navItems = [
     const mobileMenu = document.querySelector("#mobile-menu");
 
     const toggleMobileMenu = () => {
-      const isOpen = mobileMenu?.classList.toggle("hidden");
+      mobileMenu?.classList.toggle("hidden");
       const expanded = !mobileMenu?.classList.contains("hidden");
       if (mobileMenuButton) {
         mobileMenuButton.setAttribute("aria-expanded", String(expanded));
@@ -123,7 +123,7 @@ const navItems = [
       });
     });
 
-    const callback = (entries: any[]) => {
+    const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
@@ -168,7 +168,7 @@ const navItems = [
 
   @keyframes nav-shadown {
     0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
+      background-color: transparent;
     }
     to {
       @apply shadow-lg ring-1 backdrop-blur ring-white/10;

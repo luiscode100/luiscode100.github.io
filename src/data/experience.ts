@@ -1,13 +1,18 @@
----
-import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCE = [
+export interface Experience {
+  date: string
+  title: string
+  company: string
+  description: string
+  link?: string
+}
+
+export const EXPERIENCE: Experience[] = [
   {
     date: "2025",
-    title: "Software Engineer",
-    company: "End Client",
+    title: "DevOps & Backend Engineer",
+    company: "End-to-End Automation & Infrastructure Platform",
     description:
-      "Desarrollo de API REST con Node.js y Express. Implementación de autenticación JWT, gestión de datos con PostgreSQL, validación de entradas y medidas de seguridad. Despliegue del backend y base de datos en producción",
-    // link: "https://google.com,
+      "Despliegue y comunicación de servicios en producción (frontend, backend y base de datos relacional). Orquestación y gestión de clústeres con Kubernetes, automatización de integración y despliegue continuo (CI/CD), y desarrollo de scripts en Python para operativas de datos y tareas del sistema. Monitorización y resolución de incidencias mediante análisis de logs y control de métricas.",
   },
   {
     date: "2023-2024",
@@ -31,14 +36,3 @@ const EXPERIENCE = [
       "Maquetación y desarrollo web con HTML5, CSS3 y JavaScript. Mantenimiento de sitios WordPress y PrestaShop, configuración de plugins y pasarelas de pago seguras.",
   },
 ]
----
-
-<ol class="relative mt-16">
-  {
-    EXPERIENCE.map((experience) => (
-      <li class="">
-        <ExperienceItem {...experience} />
-      </li>
-    ))
-  }
-</ol>

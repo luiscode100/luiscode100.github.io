@@ -1,12 +1,12 @@
 ---
-const personalImageAlt = "Luis"
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import SocialPill from "@/components/SocialPill.astro"
+const personalImageAlt = "Luis";
+import Badge from "@/components/ui/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/ui/SocialPill.astro";
 ---
 
-<div class="max-w-xl">
+<div class="max-w-xxl">
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
@@ -25,12 +25,10 @@ import SocialPill from "@/components/SocialPill.astro"
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hi, soy Luis 
+    Hola, soy Luis
   </h1>
-  <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-cyan-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    <strong>Ingeniero de Software</strong> de Madrid, España. Experiencia en desarrollo de software y análisis de Datos
+  <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-cyan-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
+    <strong>Ingeniero de Software</strong> de Madrid, España, orientado al desarrollo backend, infraestructura y automatización de despliegues (CI/CD).
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:luisjp.work@gmail.com">
