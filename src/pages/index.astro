@@ -1,18 +1,18 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 
-import AboutMe from "@/components/AboutMe.astro"
+import AboutMe from "@/components/sections/AboutMe.astro"
 import Briefcase from "@/components/icons/Briefcase.astro"
 import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
+import Experience from "@/components/sections/Experience.astro"
 import GitHubIcon from "@/components/icons/GitHub.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Hero.astro"
-import TitleSection from "@/components/TitleSection.astro"
+import Projects from "@/components/sections/Projects.astro"
+import SectionContainer from "@/components/layout/SectionContainer.astro"
+import Hero from "@/components/sections/Hero.astro"
+import TitleSection from "@/components/ui/TitleSection.astro"
 
 const contactLinks = [
   {
@@ -42,9 +42,7 @@ const contactLinks = [
 >
   <main class="px-4">
     <SectionContainer id="home" class="py-16 md:py-34">
-      <Hero>
-      </slot>
-    </Hero>
+      <Hero />
     </SectionContainer>
     <div class="space-y-24">
       <SectionContainer id="sobre-mi">
